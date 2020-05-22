@@ -7,6 +7,7 @@ TagManager:
   - MiddleGround
   - Background
   - Ground
+  - Skeleton
   layers:
   - Default
   - TransparentFX

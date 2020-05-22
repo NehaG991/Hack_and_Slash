@@ -8,10 +8,18 @@ public class Player_Movement : MonoBehaviour
     // player components
     public Rigidbody2D rb;
     public Animator playerAnim;
+    public SpriteRenderer sprite;
 
-    // movement speed
+    // movement variables
     public float speed;
     float moveBy;
+
+    // roll variables
+    public float rememberRollFor;
+    float lastTimeRolled;
+
+    // shield variables
+    bool isShieldUp = false;
 
     // jump variables
     public float jumpForce;
@@ -46,19 +54,49 @@ public class Player_Movement : MonoBehaviour
         GroundChecker();
         Jump();
         BetterJump();
+        Shield();
+
+        // releases shield after mouse is released
+        if (Input.GetMouseButtonUp(1))
+        {
+            playerAnim.speed = 1;
+        }
     }
 
-    // movement method
+    // movement method: Rolling and Running
     void Move()
     {
-        float x = Input.GetAxisRaw("Horizontal");
-        moveBy = x * speed;
-        rb.velocity = new Vector2(moveBy, rb.velocity.y);
+        // player can't move if shield is up
+        if (isShieldUp == false)
+        {
+            float x = Input.GetAxisRaw("Horizontal");
+            moveBy = x * speed;
+            rb.velocity = new Vector2(moveBy, rb.velocity.y);
+        }
 
+        if (moveBy < 0)
+        {
+            sprite.flipX = true;
+        }
+        else if (moveBy > 0)
+        {
+            sprite.flipX = false;
+        }
 
-        
+        // checking if roll is done and changing the animator condition based on the time
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            playerAnim.SetBool("IsRolling", true);
+        }
     }
 
+    // changes the animation bool at the end from the event 
+    void RollEnded()
+    {
+        playerAnim.SetBool("IsRolling", false);
+    }
+
+    // jump method
     void Jump()
     {
         if (Input.GetKeyDown(KeyCode.W) && (isGrounded || Time.time - lastTimeGrounded <= rememberGroundedFor))
@@ -67,6 +105,7 @@ public class Player_Movement : MonoBehaviour
         }
     }
 
+    // makes jump look more realistic
     void BetterJump()
     {
         if (rb.velocity.y < 0 )
@@ -79,6 +118,7 @@ public class Player_Movement : MonoBehaviour
         }
     }
 
+    // checks if the player is on the ground to jump
     void GroundChecker()
     {
         Collider2D collider = Physics2D.OverlapCircle(isGroundCheckered.position, checkGroundRadius, groundLayer);
@@ -97,5 +137,32 @@ public class Player_Movement : MonoBehaviour
             isGrounded = false;
             playerAnim.SetBool("IsJumping", true);
         }
+    }
+
+    // Starts shield animation 
+    void Shield()
+    {
+        if (Input.GetKey(KeyCode.Mouse1))
+        {
+            playerAnim.SetBool("ShieldUp", true);
+            isShieldUp = true;
+        }
+    }
+
+    // keeps the shield up if the button is still pressed
+    void KeepShieldUp()
+    {
+
+        if (Input.GetKey(KeyCode.Mouse1))
+        {
+            playerAnim.speed = 0.0f;
+        }
+    }
+
+    // puts shield away at the end of the animation
+    void ShieldDown()
+    {
+        playerAnim.SetBool("ShieldUp", false);
+        isShieldUp = false;
     }
 }
