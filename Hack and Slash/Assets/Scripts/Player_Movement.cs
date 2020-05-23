@@ -165,4 +165,18 @@ public class Player_Movement : MonoBehaviour
         playerAnim.SetBool("ShieldUp", false);
         isShieldUp = false;
     }
+
+
+
+    // Falling on Spikes
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Spikes"))
+        {
+            playerAnim.SetBool("IsDead", true);
+
+            // makes shield up true so player can't move
+            isShieldUp = true;
+        }
+    }
 }

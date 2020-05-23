@@ -12,6 +12,7 @@ public class KnightAttack : MonoBehaviour
     public int noOfClicks = 0;
     float lastClickedTime = 0;
     float maxComboDelay = 2;
+    public int damage;
 
     // Update is called once per frame
     void Update()
@@ -33,15 +34,10 @@ public class KnightAttack : MonoBehaviour
                 // detects enemies
                 Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayer);
 
-                // damage collided enemies
                 foreach (Collider2D enemy in hitEnemies)
                 {
-                    Debug.Log("Enemy Hit");
+                    enemy.GetComponent<EnemyHPManager>().TakeDamage(damage);
                 }
-
-                Debug.Log("Attack1");
-
-                
             }
 
             
@@ -51,11 +47,18 @@ public class KnightAttack : MonoBehaviour
             
     }
 
+    // starts the second attack and damage the enemy if hit
     public void endOfOne()
     {
         if (noOfClicks >= 2)
         {
             animator.SetBool("Attack2", true);
+            Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayer);
+
+            foreach (Collider2D enemy in hitEnemies)
+            {
+                enemy.GetComponent<EnemyHPManager>().TakeDamage(damage);
+            }
         }
         else
         {
@@ -64,11 +67,18 @@ public class KnightAttack : MonoBehaviour
         }
     }
 
+    // starts the third attack if button clicked and damages enemy
     public void endOfTwo()
     {
         if (noOfClicks >= 3)
         {
             animator.SetBool("Attack3", true);
+            Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayer);
+
+            foreach (Collider2D enemy in hitEnemies)
+            {
+                enemy.GetComponent<EnemyHPManager>().TakeDamage(damage);
+            }
         }
         else
         {

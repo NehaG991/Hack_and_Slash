@@ -8,6 +8,7 @@ TagManager:
   - Background
   - Ground
   - Skeleton
+  - Spikes
   layers:
   - Default
   - TransparentFX
