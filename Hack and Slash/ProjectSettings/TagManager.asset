@@ -9,6 +9,8 @@ TagManager:
   - Ground
   - Skeleton
   - Spikes
+  - PatrolConstraints
+  - AttackTrigger
   layers:
   - Default
   - TransparentFX
