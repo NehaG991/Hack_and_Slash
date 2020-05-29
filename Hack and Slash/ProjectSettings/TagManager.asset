@@ -11,6 +11,8 @@ TagManager:
   - Spikes
   - PatrolConstraints
   - AttackTrigger
+  - Knight
+  - Archer
   layers:
   - Default
   - TransparentFX
