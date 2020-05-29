@@ -350,6 +350,51 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 259890624}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &376413401
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 376413402}
+  - component: {fileID: 376413403}
+  m_Layer: 0
+  m_Name: Character List
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &376413402
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 376413401}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.676363, y: -0.29113308, z: -282.32617}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1498383996}
+  - {fileID: 749113339}
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &376413403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 376413401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a7dc4f78ff5a8e45b234fc935cb01b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &542231608
 GameObject:
   m_ObjectHideFlags: 0
@@ -1308,7 +1353,7 @@ GameObject:
   - component: {fileID: 749113341}
   m_Layer: 8
   m_Name: Archer
-  m_TagString: Untagged
+  m_TagString: Archer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1417,13 +1462,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 749113335}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.47, y: -0.91, z: -6}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -5.903637, y: -0.6188669, z: 276.32617}
   m_LocalScale: {x: 4, y: 4, z: 0}
   m_Children:
   - {fileID: 28100975}
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_Father: {fileID: 376413402}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &749113340
 Animator:
@@ -2100,7 +2145,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1314656237}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1.5, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2121,7 +2166,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e727dcbb1c9f52409032612ab984011, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1498383994}
 --- !u!4 &1357131404 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4359159201283461711, guid: a88ccf82736cc0c4cbf81b3244a4095d,
@@ -2264,16 +2308,16 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1498383994}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.79, y: -0.91, z: -6}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -6.113637, y: -0.6188669, z: 276.32617}
   m_LocalScale: {x: 4, y: 4, z: 0}
   m_Children:
   - {fileID: 1702888996}
   - {fileID: 680675464}
   - {fileID: 1573111845}
   - {fileID: 1480580811}
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_Father: {fileID: 376413402}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &1498383997
 Rigidbody2D:
@@ -2329,7 +2373,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1498383994}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e0faa98566e4c9841a093ff592ccac86, type: 3}
   m_Name: 
@@ -2374,7 +2418,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1498383994}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2b55ae9a495890a4aaa10e07be0ade29, type: 3}
   m_Name: 
