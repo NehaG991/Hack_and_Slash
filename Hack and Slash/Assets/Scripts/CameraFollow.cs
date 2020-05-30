@@ -18,7 +18,7 @@ public class CameraFollow : MonoBehaviour
 
         // gets the current selected character 
         selectedPlayer = PlayerPrefs.GetInt("CharacterSelected");
-        Debug.Log(selectedPlayer);
+        //Debug.Log(selectedPlayer);
 
         // the player field is equal to the current player selected
         if (selectedPlayer == 0)

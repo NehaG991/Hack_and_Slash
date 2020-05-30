@@ -25,7 +25,7 @@ public class EnemyHPManager : MonoBehaviour
     {
         animator.SetTrigger("Hit");
         currentHealth -= damage;
-        //Debug.Log(currentHealth);
+        Debug.Log(currentHealth);
 
         if (currentHealth <= 0)
         {
@@ -38,6 +38,6 @@ public class EnemyHPManager : MonoBehaviour
     {
         animator.SetFloat("Speed", 0);
         animator.SetTrigger("Dead");
-        //Debug.Log("Enemy has Died");
+        Debug.Log("Enemy has Died");
     }
 }

@@ -350,6 +350,36 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 259890624}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &329897342
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 329897343}
+  m_Layer: 8
+  m_Name: CrossHair
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &329897343
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 329897342}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.098, y: 0.0885, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 749113339}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &376413401
 GameObject:
   m_ObjectHideFlags: 0
@@ -1351,6 +1381,7 @@ GameObject:
   - component: {fileID: 749113336}
   - component: {fileID: 749113340}
   - component: {fileID: 749113341}
+  - component: {fileID: 749113342}
   m_Layer: 8
   m_Name: Archer
   m_TagString: Archer
@@ -1467,6 +1498,7 @@ Transform:
   m_LocalScale: {x: 4, y: 4, z: 0}
   m_Children:
   - {fileID: 28100975}
+  - {fileID: 329897343}
   m_Father: {fileID: 376413402}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1514,6 +1546,23 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 512
+--- !u!114 &749113342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 749113335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f549d4ac8bf4a824195f6ad5f7755091, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 749113340}
+  crosshair: {fileID: 329897343}
+  arrowPrefab: {fileID: 4695990891808100876, guid: 3f93e42c3ef5e354091da02d6a51cf30,
+    type: 3}
+  speed: 15
 --- !u!1 &834282336
 GameObject:
   m_ObjectHideFlags: 0
@@ -2990,7 +3039,7 @@ GameObject:
   - component: {fileID: 1735357547}
   m_Layer: 10
   m_Name: Skeleton
-  m_TagString: Skeleton
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

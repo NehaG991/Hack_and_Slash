@@ -96,9 +96,11 @@ public class Player_Movement : MonoBehaviour
     void Flip()
     {
         facingRight = !facingRight;
-        Vector3 theScale = transform.localScale;
+        /*Vector3 theScale = transform.localScale;
         theScale.x *= -1;
-        transform.localScale = theScale;
+        transform.localScale = theScale;*/
+
+        transform.Rotate(0f, 180f, 0f);
     }
 
     // changes the animation bool at the end from the event 
