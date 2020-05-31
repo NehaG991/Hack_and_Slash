@@ -25,7 +25,6 @@ public class EnemyPatrol : MonoBehaviour
         {
             transform.Translate(2 * Time.deltaTime * speed, 0, 0);
             enemy.flipX = false;
-            
         }
 
         // moves enemy left
@@ -33,11 +32,13 @@ public class EnemyPatrol : MonoBehaviour
         {
             transform.Translate(-2 * Time.deltaTime * speed, 0, 0);
             enemy.flipX = true;
+
         }
 
         // plays either walk or idle animation based on speed
         ani.SetFloat("Speed", speed);
     }
+
 
     // checks if at the max side of patrol and flips the enemy
     // if collides with player attack trigger, stops and attacks

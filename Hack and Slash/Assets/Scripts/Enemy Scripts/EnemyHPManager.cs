@@ -33,11 +33,14 @@ public class EnemyHPManager : MonoBehaviour
         }
     }
 
-    // skeleton dies if hit twice
+    // enemy dies; disables patrol script
     public void Death()
     {
         animator.SetFloat("Speed", 0);
         animator.SetTrigger("Dead");
         Debug.Log("Enemy has Died");
+        this.GetComponent<EnemyPatrol>().enabled = false;
     }
+
+
 }

@@ -149,4 +149,14 @@ public class ArcherMovement : MonoBehaviour
         }
     }
 
+    // falling on spikes method
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Spikes"))
+        {
+            playerAnim.SetBool("IsDead", true);
+            this.GetComponent<ArcherMovement>().enabled = false;
+        }
+    }
+
 }
