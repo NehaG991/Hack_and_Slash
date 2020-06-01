@@ -14,6 +14,7 @@ public class EnemyPatrol : MonoBehaviour
     private void Awake()
     {
         onPatrol = true;
+        moveRight = true;
     }
 
     // Update is called once per frame
@@ -25,6 +26,8 @@ public class EnemyPatrol : MonoBehaviour
         {
             transform.Translate(2 * Time.deltaTime * speed, 0, 0);
             enemy.flipX = false;
+
+
         }
 
         // moves enemy left
@@ -32,6 +35,7 @@ public class EnemyPatrol : MonoBehaviour
         {
             transform.Translate(-2 * Time.deltaTime * speed, 0, 0);
             enemy.flipX = true;
+
 
         }
 
@@ -51,10 +55,12 @@ public class EnemyPatrol : MonoBehaviour
             if (moveRight)
             {
                 moveRight = false;
+
             }
             else
             {
                 moveRight = true;
+
             }
         }
 
@@ -65,6 +71,8 @@ public class EnemyPatrol : MonoBehaviour
             ani.SetBool("Attack1", true);
         }
     }
+    
+
 
     // Enemy Continues patrol if player is out of range
     void AfterAttack()
